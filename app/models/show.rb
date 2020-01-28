@@ -9,6 +9,7 @@ class Show < ActiveRecord::Base
     aid = self.characters.first.actor_id 
    act =  Actor.find_by(id: aid)
    actors << "#{act.first_name} #{act.last_name}"
+   actors
   end
   
 end
