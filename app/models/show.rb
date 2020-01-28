@@ -4,9 +4,11 @@ class Show < ActiveRecord::Base
   has_many :characters
   
   def actors_list
-    binding.pry
+    #binding.pry
+    actors = []
     aid = self.characters.first.actor_id 
    act =  Actor.find_by(id: aid)
+   actors << "#{act.first_name} #{act.last_name}"
   end
   
 end
