@@ -5,7 +5,8 @@ class Show < ActiveRecord::Base
   
   def actors_list
     binding.pry
-    aid = self.chara
+    aid = self.characters.first.actor_id 
+   act =  Actor.find_by(id: aid)
   end
   
 end
